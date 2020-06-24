@@ -8,16 +8,16 @@ class Service:
     def get_contact(self,payload): #name
         for i in self._contatcs:
             if(payload == i.name):
-                print(i)
+                return i
 
-    def get_contacts(self):
+    def get_contacts(self)->[]:
+        contacts = []
         for i in self._contatcs:
-            print(i)
+            contacts.append(i.to_string())
+        return ','.join(contacts)
 
     def del_contact(self,payload): #name
-        cnt = 0
-        for i in self._contatcs:
-            if(payload == i.name):
-                del self._contatcs[cnt]
-            cnt += 1
+        for i,t in enumerate(self._contatcs):
+            if(payload == t.name):
+                del self._contatcs[i]
 

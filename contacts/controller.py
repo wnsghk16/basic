@@ -12,13 +12,13 @@ class Controller:
         model.phone = phone
         model.email = email
         model.addr = addr
-        return self.service.add_concat(model)
+        self.service.add_concat(model)
 
     def search(self,name):
-        self.service.get_contact(name)
+        return self.service.get_contact(name)
 
     def list(self):
-        self.service.get_contacts()
+        return self.service.get_contacts()
 
     def remove(self,name):
-        return self.service.del_contact(name)
+        self.service.del_contact(name)

@@ -25,5 +25,8 @@ class Model:
     @addr.setter
     def addr(self,addr): self._addr = addr
 
-    def __str__(self):
+    def __str__(self)->str:
         return '[이름 : %s, 전화번호 : %s, 이메일 : %s, 주소 : %s]' % (self._name, self._phone,self._email,self._addr)
+
+    def to_string(self)->str:
+        return '\n[이름 : {}, 전화번호 : {}, 이메일 : {}, 주소 : {}]'.format(self._name, self._phone,self._email,self._addr)
